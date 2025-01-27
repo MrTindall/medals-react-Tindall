@@ -10,7 +10,6 @@ function App() {
   ]);
 
   function handleDelete(countryId) {
-    console.log(`delete word: ${countryId}`);
     setCountries(countries.filter((c) => c.id !== countryId));
   }
 
