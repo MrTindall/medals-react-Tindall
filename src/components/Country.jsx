@@ -1,5 +1,3 @@
-
-
 export default function Country(props) {
     return (
         <div
