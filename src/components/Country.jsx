@@ -1,14 +1,15 @@
-export default function Country(props) {
-    return (
-        <div
-            className="country"
-        >
-            <div>
-                <h3>{props.country.name}</h3>
-                <h4>Gold Medals: {props.country.gold}</h4>
-            </div>
+import Medal from "./Medal";
 
-            <button onClick={() => props.onDelete(props.country.id)}>Delete</button>
-        </div>
-    );
+export default function Country({ country, medals, onDelete }) {
+  return (
+    <div className="country">
+      <h3>{country.name}</h3>
+      <div className="medals-container">
+        {medals.map((medal) => (
+          <Medal key={medal.id} type={medal.name} count={country[medal.name]} />
+        ))}
+      </div>
+      <button onClick={() => onDelete(country.id)}>Delete</button>
+    </div>
+  );
 }
