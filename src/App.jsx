@@ -4,9 +4,9 @@ import "./App.css";
 
 function App() {
   const [countries, setCountries] = useState([
-    { id: 1, name: "United States", gold: 2, silver: 1, bronze: 3 },
-    { id: 2, name: "China", gold: 3, silver: 2, bronze: 1 },
-    { id: 3, name: "France", gold: 0, silver: 2, bronze: 1 },
+    { id: 1, name: "United States"},
+    { id: 2, name: "China"},
+    { id: 3, name: "France"},
   ]);
 
   const medals = useRef([

@@ -6,7 +6,7 @@ export default function Country({ country, medals, onDelete }) {
       <h3>{country.name}</h3>
       <div className="medals-container">
         {medals.map((medal) => (
-          <Medal key={medal.id} type={medal.name} count={country[medal.name]} />
+          <Medal key={medal.id} type={medal.name} />
         ))}
       </div>
       <button onClick={() => onDelete(country.id)}>Delete</button>

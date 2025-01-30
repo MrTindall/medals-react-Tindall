@@ -1,7 +1,7 @@
-export default function Medal({ type, count }) {
+export default function Medal({ type }) {
     return (
-      <div className={`medal ${type}`}>
-        <h4>{type.charAt(0).toUpperCase() + type.slice(1)}: {count}</h4>
+      <div className={`medal`}>
+        <h4>{type} medals</h4>
       </div>
     );
   }
