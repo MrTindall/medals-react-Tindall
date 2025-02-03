@@ -35,6 +35,12 @@ h1 {
   line-height: 1.1;
 }
 
+h2 {
+  font-size: 2.0em;
+  line-height: 1.1;
+  color: white;
+}
+
 h3 {
   font-size: 2.5em;
   line-height: 1.1;
@@ -48,6 +54,10 @@ h4 {
   padding: 0;
   margin: 0;
   padding-top: 4px;
+}
+
+p{
+  color: white;
 }
 
 button {

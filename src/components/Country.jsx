@@ -1,15 +1,16 @@
 import Medal from "./Medal";
 
-export default function Country({ country, medals, onDelete }) {
+export default function Country({ country, onIncrement, onDecrement }) {
+  const totalMedals = country.gold + country.silver + country.bronze;
+
   return (
     <div className="country">
-      <h3>{country.name}</h3>
+      <h3>{country.name} - Total Medals: {totalMedals}</h3>
       <div className="medals-container">
-        {medals.map((medal) => (
-          <Medal key={medal.id} type={medal.name} />
-        ))}
+        <Medal type="gold" count={country.gold} onIncrement={onIncrement} onDecrement={onDecrement} countryId={country.id} />
+        <Medal type="silver" count={country.silver} onIncrement={onIncrement} onDecrement={onDecrement} countryId={country.id} />
+        <Medal type="bronze" count={country.bronze} onIncrement={onIncrement} onDecrement={onDecrement} countryId={country.id} />
       </div>
-      <button onClick={() => onDelete(country.id)}>Delete</button>
     </div>
   );
 }
