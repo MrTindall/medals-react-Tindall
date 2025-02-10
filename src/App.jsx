@@ -1,5 +1,6 @@
 import { useState } from "react";
 import Country from "./components/Country";
+import NewCountry from "./components/NewCountry";
 import "./App.css";
 
 function App() {
@@ -27,6 +28,13 @@ function App() {
     );
   }
 
+  function addCountry(name) {
+    setCountries((prevCountries) => [
+      ...prevCountries,
+      { id: prevCountries.length + 1, name, gold: 0, silver: 0, bronze: 0 },
+    ]);
+  }
+
   const totalGold = countries.reduce((sum, country) => sum + country.gold, 0);
   const totalSilver = countries.reduce((sum, country) => sum + country.silver, 0);
   const totalBronze = countries.reduce((sum, country) => sum + country.bronze, 0);
@@ -43,6 +51,7 @@ function App() {
         <p style={{ color: "brown" }}>Bronze: {totalBronze}</p>
       </div>
 
+      <NewCountry onAddCountry={addCountry} />
 
       {countries.map((country) => (
         <Country

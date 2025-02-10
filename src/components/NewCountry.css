@@ -1,0 +1,105 @@
+#trigger {
+    position: fixed;
+    left: 0.8rem;
+    bottom: 0.8rem;
+    cursor: pointer;
+    z-index: 80;
+    transform: scale(80%, 80%);
+    transition: transform 150ms ease-in-out;
+    width: 200px;
+    height: 50px;
+    font-size: 1.2rem;
+  }
+  #dialog,
+  #dialog * {
+    box-sizing: border-box;
+    border-radius: 0.3em;
+  }
+  #dialog {
+    background: #242424;
+    box-shadow: 0.15rem 0.15rem 0.35rem #1a1a1a;
+    border: 0.1rem solid #1a1a1a;
+    padding: 0.8rem;
+    width: 400px;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 100;
+  }
+  #dialog > header {
+    grid-area: _header;
+    color: white;
+    padding: 0.3rem 0.3rem 0 0.3rem;
+    font: 2.5rem "Luckiest Guy", cursive;
+    text-align: center;
+    white-space: nowrap;
+    overflow-x: auto;
+  }
+  #dialog > .color {
+    display: flex;
+    gap: 0.4rem;
+  }
+  #dialog > .color:has(> #red) {
+    grid-area: _red;
+  }
+  #dialog > .color:has(> #green) {
+    grid-area: _green;
+  }
+  #dialog > .color:has(> #blue) {
+    grid-area: _blue;
+  }
+  #dialog > div:has(> #text) {
+    grid-area: _text;
+  }
+  #dialog > div:has(> #save) {
+    grid-area: _save;
+  }
+  #dialog > div:has(> #cancel) {
+    grid-area: _cancel;
+  }
+  #dialog > .color > .color-square {
+    height: 2.25rem;
+    width: 2.25rem;
+  }
+  #dialog > .color > .value {
+    color: var(--white-color);
+    width: 2.25rem;
+    text-align: right;
+    font: normal 500 1.6rem "Teko", sans-serif;
+  }
+  #dialog > div > #text {
+    font-size: 1.3rem !important;
+    padding: 0.2rem;
+  }
+  #save,
+  #cancel,
+  #text {
+    border: 0;
+    font: normal 500 1.6rem "Teko", sans-serif;
+    outline: none;
+    width: 100%;
+  }
+  button {
+    background-color: var(--button-color);
+    color: var(--white-color);
+    transition: all 400ms ease-in-out;
+  }
+  button:hover:enabled {
+    background-color: #ad4b42;
+  }
+  button:disabled {
+    opacity: 0.2;
+    cursor: not-allowed;
+  }
+  #overlay {
+    background-color: #242424;
+    opacity: 0.7;
+    height: 100vh;
+    width: 100vw;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 90;
+  }
+  
